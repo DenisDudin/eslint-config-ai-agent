@@ -62,7 +62,7 @@ export default aiAgent({
 })
 ```
 
-Enables all React rules plus `eslint-plugin-react-native`, `eslint-plugin-react-native-a11y`. Blocks HTML elements (`<div>`, `<span>`, `<button>`, and 22 more) that AI agents use instead of RN components. Restricts web-only globals (`document`, `window`, `localStorage`, `sessionStorage`) and internal RN package imports.
+Enables all React rules plus `eslint-plugin-react-native`. Blocks HTML elements (`<div>`, `<span>`, `<button>`, and 22 more) that AI agents use instead of RN components. Restricts web-only globals (`document`, `window`, `localStorage`, `sessionStorage`) and internal RN package imports.
 
 ### Vue
 

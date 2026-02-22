@@ -70,7 +70,6 @@ describe('aiAgent factory', () => {
     const names = configs.map(c => c.name).filter(Boolean)
     expect(names).toContain('ai-agent/react')
     expect(names).toContain('ai-agent/react-native')
-    expect(names).toContain('ai-agent/react-native-a11y')
   })
 
   it('vue option adds vue configs', () => {

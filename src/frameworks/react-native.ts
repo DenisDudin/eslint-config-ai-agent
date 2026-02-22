@@ -1,6 +1,5 @@
 import type { Linter } from 'eslint'
 import reactNative from 'eslint-plugin-react-native'
-import reactNativeA11y from 'eslint-plugin-react-native-a11y'
 import { BASE_RESTRICTED_SYNTAX, BASE_RESTRICTED_GLOBALS, RN_RESTRICTED_IMPORT_PATTERNS } from '../shared-restrictions.js'
 
 const HTML_TAGS = [
@@ -33,25 +32,6 @@ export function reactNativeConfig(): Linter.Config[] {
         'react-native/no-color-literals': 'warn',
         'react-native/no-single-element-style-arrays': 'error',
         'react-native/split-platform-components': 'error',
-      },
-    },
-    {
-      name: 'ai-agent/react-native-a11y',
-      files: ['**/*.tsx'],
-      plugins: {
-        'react-native-a11y': reactNativeA11y as unknown as Record<string, unknown>,
-      },
-      rules: {
-        'react-native-a11y/has-accessibility-hint': 'warn',
-        'react-native-a11y/has-accessibility-props': 'error',
-        'react-native-a11y/has-valid-accessibility-actions': 'error',
-        'react-native-a11y/has-valid-accessibility-role': 'error',
-        'react-native-a11y/has-valid-accessibility-state': 'error',
-        'react-native-a11y/has-valid-accessibility-states': 'error',
-        'react-native-a11y/has-valid-accessibility-component-type': 'error',
-        'react-native-a11y/has-valid-accessibility-traits': 'error',
-        'react-native-a11y/has-valid-accessibility-value': 'error',
-        'react-native-a11y/no-nested-touchables': 'error',
       },
     },
     {
