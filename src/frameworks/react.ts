@@ -2,7 +2,10 @@ import type { Linter } from 'eslint'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import reactRefreshImport from 'eslint-plugin-react-refresh'
+
+// eslint-plugin-react-refresh is ESM-only; when consumed via CJS the default export sits at .default
+const reactRefresh = (reactRefreshImport as unknown as { default: typeof reactRefreshImport }).default ?? reactRefreshImport
 
 export function reactConfig(): Linter.Config[] {
   return [

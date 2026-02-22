@@ -1,5 +1,8 @@
 import type { Linter } from 'eslint'
-import unicorn from 'eslint-plugin-unicorn'
+import unicornImport from 'eslint-plugin-unicorn'
+
+// eslint-plugin-unicorn is ESM-only; when consumed via CJS the default export sits at .default
+const unicorn = (unicornImport as unknown as { default: typeof unicornImport }).default ?? unicornImport
 
 export function unicornConfig(): Linter.Config {
   return {
