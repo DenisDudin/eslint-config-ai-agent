@@ -1,5 +1,5 @@
-import type { Linter } from 'eslint'
-import boundaries from 'eslint-plugin-boundaries'
+import type { Linter, ESLint } from 'eslint'
+import { loadPlugin } from '../utils/load-plugin.js'
 import { RN_RESTRICTED_IMPORT_PATTERNS } from '../shared-restrictions.js'
 
 interface FsdOptions {
@@ -7,6 +7,8 @@ interface FsdOptions {
 }
 
 export function fsdConfig(options: FsdOptions = {}): Linter.Config[] {
+  const boundaries = loadPlugin<ESLint.Plugin>('eslint-plugin-boundaries', 'eslint-plugin-boundaries')
+
   // Merge FSD patterns with RN patterns when both are enabled (flat config last-wins)
   const restrictedPatterns = [
     {

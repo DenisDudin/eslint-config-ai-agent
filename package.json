@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ai-agent",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Universal ESLint configuration optimized for AI-agent development",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -46,32 +46,65 @@
   "sideEffects": false,
   "peerDependencies": {
     "eslint": ">=9.0.0",
-    "typescript": ">=5.0.0"
+    "typescript": ">=5.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-boundaries": "^5.0.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-native": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "eslint-plugin-vue": "^9.32.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
+      "optional": true
+    },
+    "eslint-config-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-boundaries": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-react-native": {
+      "optional": true
+    },
+    "eslint-plugin-react-refresh": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
       "optional": true
     }
   },
   "dependencies": {
     "@eslint/js": "^9.18.0",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-boundaries": "^5.0.0",
     "eslint-plugin-import-x": "^4.6.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-promise": "^7.2.1",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-native": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.5.0",
     "eslint-plugin-sonarjs": "^4.0.0",
     "eslint-plugin-unicorn": "^63.0.0",
-    "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",
     "typescript-eslint": "^8.20.0"
   },
   "devDependencies": {
+    "@types/node": "^22.0.0",
     "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-boundaries": "^5.0.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-native": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.5.0",
+    "eslint-plugin-vue": "^9.32.0",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3",
     "vitest": "^3.0.4"

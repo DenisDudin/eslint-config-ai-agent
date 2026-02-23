@@ -1,13 +1,14 @@
-import type { Linter } from 'eslint'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
-import reactRefreshImport from 'eslint-plugin-react-refresh'
+import type { Linter, ESLint } from 'eslint'
+import { loadPlugin } from '../utils/load-plugin.js'
 
-// eslint-plugin-react-refresh is ESM-only; when consumed via CJS the default export sits at .default
-const reactRefresh = (reactRefreshImport as unknown as { default: typeof reactRefreshImport }).default ?? reactRefreshImport
+const HINT = 'eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-refresh'
 
 export function reactConfig(): Linter.Config[] {
+  const react = loadPlugin<ESLint.Plugin>('eslint-plugin-react', HINT)
+  const reactHooks = loadPlugin<ESLint.Plugin>('eslint-plugin-react-hooks', HINT)
+  const jsxA11y = loadPlugin<ESLint.Plugin>('eslint-plugin-jsx-a11y', HINT)
+  const reactRefresh = loadPlugin<ESLint.Plugin>('eslint-plugin-react-refresh', HINT)
+
   return [
     {
       name: 'ai-agent/react',

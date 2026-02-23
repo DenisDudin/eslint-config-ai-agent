@@ -13,7 +13,32 @@ npm install -D eslint-config-ai-agent
 pnpm add -D eslint-config-ai-agent
 ```
 
-**Peer dependencies:** `eslint >= 9.0.0`, `typescript >= 5.0.0` (optional)
+Framework plugins (react, vue, react-native, fsd, prettier) are optional peer dependencies — install only what you use:
+
+```bash
+# React
+npm install -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-refresh
+
+# Vue
+npm install -D eslint-plugin-vue
+
+# React Native
+npm install -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-refresh eslint-plugin-react-native
+
+# FSD architecture
+npm install -D eslint-plugin-boundaries
+
+# Prettier compat
+npm install -D eslint-config-prettier
+```
+
+Or install everything at once:
+
+```bash
+npx install-peerdeps -D eslint-config-ai-agent
+```
+
+**Required peer dependencies:** `eslint >= 9.0.0`, `typescript >= 5.0.0` (optional)
 
 ## Quick Start
 

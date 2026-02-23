@@ -16,9 +16,3 @@ declare module 'eslint-plugin-react-native' {
   const plugin: ESLint.Plugin
   export default plugin
 }
-
-declare module 'eslint-plugin-react-native-a11y' {
-  import type { ESLint } from 'eslint'
-  const plugin: ESLint.Plugin
-  export default plugin
-}

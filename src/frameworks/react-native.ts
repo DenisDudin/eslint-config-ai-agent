@@ -1,5 +1,5 @@
-import type { Linter } from 'eslint'
-import reactNative from 'eslint-plugin-react-native'
+import type { Linter, ESLint } from 'eslint'
+import { loadPlugin } from '../utils/load-plugin.js'
 import { BASE_RESTRICTED_SYNTAX, BASE_RESTRICTED_GLOBALS, RN_RESTRICTED_IMPORT_PATTERNS } from '../shared-restrictions.js'
 
 const HTML_TAGS = [
@@ -18,6 +18,8 @@ function buildHtmlTagRestrictions(): Array<{ selector: string; message: string }
 }
 
 export function reactNativeConfig(): Linter.Config[] {
+  const reactNative = loadPlugin<ESLint.Plugin>('eslint-plugin-react-native', 'eslint-plugin-react-native')
+
   return [
     {
       name: 'ai-agent/react-native',

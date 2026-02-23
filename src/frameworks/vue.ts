@@ -1,9 +1,12 @@
 import type { Linter } from 'eslint'
-import vue from 'eslint-plugin-vue'
+import type VuePlugin from 'eslint-plugin-vue'
 import tseslint from 'typescript-eslint'
+import { loadPlugin } from '../utils/load-plugin.js'
 import type { Level } from '../types.js'
 
 export function vueConfig(level: Level): Linter.Config[] {
+  const vue = loadPlugin<typeof VuePlugin>('eslint-plugin-vue', 'eslint-plugin-vue')
+
   // Base preset: essential for mvp, recommended for standard+
   const preset = level === 'mvp'
     ? vue.configs['flat/essential'] as Linter.Config[]
