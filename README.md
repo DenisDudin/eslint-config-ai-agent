@@ -38,7 +38,15 @@ Or install everything at once:
 npx install-peerdeps -D eslint-config-ai-agent
 ```
 
-**Required peer dependencies:** `eslint >= 9.0.0`, `typescript >= 5.0.0` (optional)
+**Required peer dependencies:** `eslint >= 9.38.0`, `typescript >= 5.0.0` (optional)
+
+> **`npm audit` reports minimatch vulnerability?**
+> `typescript-eslint` (a dependency of this package) currently ships `minimatch@^9` internally, which has a [ReDoS advisory](https://github.com/advisories/GHSA-3ppc-4f35-3m26). This is a dev-only tool, so there is no production impact. A fix is pending in `typescript-eslint@8.56.1` (stable). Until then, add an override to your project:
+> ```json
+> // package.json
+> "overrides": { "minimatch": "^10.2.1" }
+> // pnpm: use "pnpm.overrides" instead
+> ```
 
 ## Quick Start
 
